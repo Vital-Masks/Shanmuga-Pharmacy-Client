@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <!-- Required meta tags -->
@@ -8,6 +8,7 @@
     <title>SpryStore E-commerce Category Bootstrap Responsive Website Template | Home :: W3layouts</title>
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style-starter.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css')}}">
     <!-- Template CSS -->
     <link href="//fonts.googleapis.com/css?family=Oswald:300,400,500,600&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900&display=swap" rel="stylesheet">
@@ -16,9 +17,11 @@
 
 
 <body>
-    @include('shared.header')
-    @yield('content')
-    @include('shared.footer')
+    <section class="w3l-banner-slider-main">
+        @include('shared.header')
+        @yield('content')
+        @include('shared.footer')
+    </section>
 </body>
 
 
@@ -47,7 +50,7 @@
     });
 </script>
 <!-- cart-js -->
-<script src="assets/js/minicart.js"></script>
+<script src="{{ URL::asset('assets/js/minicart.js')}}"></script>
 <script>
     transmitv.render();
 
@@ -63,7 +66,7 @@
 </script>
 <!-- //cart-js -->
 <!--pop-up-box-->
-<script src="assets/js/jquery.magnific-popup.js"></script>
+<script src="{{ URL::asset('assets/js/jquery.magnific-popup.js')}}"></script>
 <!--//pop-up-box-->
 <script>
     $(document).ready(function() {
@@ -92,4 +95,5 @@
     });
 </script>
 <!-- disable body scroll which navbar is in active -->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{ URL::asset('assets/js/script.js')}}"></script>

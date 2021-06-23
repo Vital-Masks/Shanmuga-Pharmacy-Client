@@ -12,7 +12,7 @@
                                     </a> -->
                     <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
                         a ligula quam. Ut blandit eu leo non suscipit. </p>
-                    <ul class="social-footerhny mt-lg-5 mt-4">
+                    <ul class="social-footerhny mt-lg-2 mt-2">
 
                         <li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
                         </li>
@@ -28,44 +28,68 @@
                 <div class="right-side col-lg-8 pl-lg-5">
                     <h4>Women's Day Special Offer
                         All Branded Sandals are Flat 50% Discount</h4>
-                    <div class="sub-columns">
-                        <div class="sub-one-left">
-                            <h6>Useful Links</h6>
-                            <div class="footer-hny-ul">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                                <ul>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Terms and Conditions</a></li>
-                                    <li><a href="contact.html">Support</a></li>
-                                </ul>
-                            </div>
+                 
+                </div>
+            </div>
 
-                        </div>
-                        <div class="sub-two-right">
-                            <h6>Our Store</h6>
-                            <p class="mb-5">49436 Broaddus Honey Court Avenue, Madisonville KY 95020, United States of America</p>
-
-                            <h6>We accept:</h6>
-                            <ul>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-visa" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-mastercard" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-paypal" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a class="pay-method" href="#"><span class="fa fa-cc-amex" aria-hidden="true"></span></a>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="d-flex justify-content-between mt-5">
+                <div class="sub-one-left">
+                    <h6>Useful Links</h6>
+                    <div class="footer-hny-ul">
+                        <ul>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-one-left">
+                    <h6>Useful Links</h6>
+                    <div class="footer-hny-ul">
+                        <ul>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-one-left">
+                    <h6>Useful Links</h6>
+                    <div class="footer-hny-ul">
+                        <ul>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-one-left">
+                    <h6>Useful Links</h6>
+                    <div class="footer-hny-ul">
+                        <ul>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub-one-left">
+                    <h6>Useful Links</h6>
+                    <div class="footer-hny-ul">
+                        <ul>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms and Conditions</a></li>
+                            <li><a href="contact.html">Support</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            <!-- Footer bottom -->
             <div class="below-section row">
                 <div class="columns col-lg-6">
                     <ul class="jst-link">
@@ -83,6 +107,7 @@
                     <span class="fa fa-angle-double-up"></span>
                 </button>
             </div>
+
         </div>
     </div>
     <!-- //titels-5 -->
