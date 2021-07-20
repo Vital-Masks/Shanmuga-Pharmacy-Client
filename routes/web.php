@@ -32,7 +32,3 @@ Route::get('/cart', function () {
 Route::get('/account', function () {
     return view('myAccountView');
 });
-
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
