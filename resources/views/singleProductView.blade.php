@@ -15,29 +15,29 @@
                 </div>
                 <div class="col-lg-6">
                     <div>
-                        <h5>Product name </h5>
-                        <h2>LKR 151.99</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum natus nisi fugiat. Alias ad eveniet enim! Inventore aperiam dicta fugiat, magni omnis libero! Ipsa similique possimus enim voluptatibus rerum corporis!</p>
+                        <h5>{{$product->name}}</h5>
+                        <h2>{{$product->presentPrice()}}</h2>
+                        <p>{{$product->description}}</p>
                     </div>
                     <div>
                         <table class="table table-striped">
                             <tbody>
                                 <tr>
                                     <th scope="row">Brand</th>
-                                    <td>Mark</td>
+                                    <td>{{$product->brand->name}}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Disease</th>
                                     <td>Jacob</td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <th scope="row">Delivery</th>
                                     <td>Larry</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Description</th>
                                     <td>Larry</td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
