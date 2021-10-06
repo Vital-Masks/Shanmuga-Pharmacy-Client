@@ -19,8 +19,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class, 'showProduct'])->name('show-product');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 
-
-
 Route::get('/product/1', function () {
     return view('singleProductView');
 });
