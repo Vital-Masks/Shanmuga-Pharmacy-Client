@@ -26,4 +26,8 @@ class Product extends Model
     public function presentPrice(){
         return 'LKR '.number_format($this->price / 100, 2);
     }
+
+    public function productDetails(){
+        return $this->hasMany(ProductDetail::class);
+    }
 }
