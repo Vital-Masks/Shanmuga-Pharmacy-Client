@@ -43,8 +43,8 @@
 			<!--/nav-->
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid serarc-fluid">
-					<a class="navbar-brand" href="index.html">
-						Spry<span class="lohny">S</span>tore</a>
+					<a class="navbar-brand" href="{{route('home')}}">
+						SpryStore</a>
 					<!-- if logo is image enable this   
 							<a class="navbar-brand" href="#index.html">
 								<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -75,7 +75,10 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="index.html">Home</a>
+								<a class="nav-link"  href="{{route('home')}}">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{route('products')}}">Products</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="about.html">About</a>
