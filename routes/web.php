@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class, 'showProduct'])->name('show-product');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/customer-register', [AuthController::class, 'customerRegister'])->name('customer-register');
+Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom'); 
 
 Route::get('/product/1', function () {
     return view('singleProductView');

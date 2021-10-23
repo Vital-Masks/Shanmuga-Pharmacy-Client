@@ -1,45 +1,4 @@
 		<header class="tophny-header">
-			<div class="container-fluid">
-				<div class="top-right-strip row">
-					<!--//right-->
-					<div class="overlay-login text-left">
-						<button type="button" class="overlay-close1">
-							<i class="fa fa-times" aria-hidden="true"></i>
-						</button>
-						<div class="wrap">
-							<h5 class="text-center mb-4">Login Now</h5>
-							<div class="login-bghny p-md-5 p-4 mx-auto mw-100">
-								<!--/login-form-->
-								<form action="#" method="post">
-									<div class="form-group">
-										<p class="login-texthny mb-2">Email address</p>
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-										<small id="emailHelp" class="form-text text-muted">We'll never share your email
-											with anyone else.</small>
-									</div>
-									<div class="form-group">
-										<p class="login-texthny mb-2">Password</p>
-										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
-									</div>
-									<div class="form-check mb-2">
-										<div class="userhny-check">
-											<label class="check-remember container">
-												<input type="checkbox" class="form-check"> <span class="checkmark"></span>
-												<p class="privacy-policy">Remember me</p>
-											</label>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-									<button type="submit" class="submit-login btn mb-4">Sign In</button>
-
-								</form>
-								<!--//login-form-->
-							</div>
-							<!---->
-						</div>
-					</div>
-				</div>
-			</div>
 			<!--/nav-->
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid serarc-fluid">
@@ -75,7 +34,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item active">
-								<a class="nav-link"  href="{{route('home')}}">Home</a>
+								<a class="nav-link" href="{{route('home')}}">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="{{route('products')}}">Products</a>
@@ -97,11 +56,18 @@
 						<!--/right-->
 						<ul class="top-hnt-right-content col-lg-6">
 
-							<li class="button-log usernhy">
+							<li class="button-log usernhy" style="display: flex; align-items: center">
 								<a class="btn-open" href="#">
 									<span class="fa fa-user" aria-hidden="true"></span>
 								</a>
+								<h6 class="ml-2">
+									@if (Auth::check())
+									Hello {{ Auth::user()->name }}
+									@endif
+								</h6>
+
 							</li>
+
 							<li class="transmitvcart galssescart2 cart cart box_1">
 								<form action="#" method="post" class="last">
 									<input type="hidden" name="cmd" value="_cart">

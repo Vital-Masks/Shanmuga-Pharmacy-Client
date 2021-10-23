@@ -70,3 +70,25 @@
     width: 100%;
     object-fit: contain;
 }
+
+//authentication
+.authentication {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+
+    .authentication__form {
+        background-color: rgb(229, 243, 226);
+        height: 60vh;
+        width: 40vw;
+        border-radius: 8px;
+        box-shadow: -1px 2px 10px -3px rgba(0, 0, 0, 0.75);
+        h4 {
+            text-align: center;
+            padding-top: 20px;
+        }
+        form {
+            padding: 40px;
+        }
+    }
+}
