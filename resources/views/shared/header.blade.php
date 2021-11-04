@@ -57,9 +57,21 @@
 						<ul class="top-hnt-right-content col-lg-6">
 
 							<li class="button-log usernhy" style="display: flex; align-items: center">
-								<a class="btn-open" href="#">
+								<!-- <a class="btn-open" href="#">
 									<span class="fa fa-user" aria-hidden="true"></span>
-								</a>
+								</a> -->
+								<div class="dropdown">
+									<a class="btn-open" href="#">
+										<span class="fa fa-user" aria-hidden="true"></span>
+									</a>
+
+									<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+										<li><a class="dropdown-item" href="#">Action</a></li>
+										<li><a class="dropdown-item" href="#">Another action</a></li>
+										<li><a class="dropdown-item" href="#">Something else here</a></li>
+									</ul>
+								</div>
+
 								<h6 class="ml-2">
 									@if (Auth::check())
 									Hello {{ Auth::user()->name }}
@@ -79,6 +91,14 @@
 								</form>
 							</li>
 						</ul>
+						<!--//right-->
+						<div class="overlay-login text-left">
+							@include('auth.login')
+						</div>
+
+						<div class="overlay-register text-left">
+							@include('auth.register')
+						</div>
 
 					</div>
 				</div>

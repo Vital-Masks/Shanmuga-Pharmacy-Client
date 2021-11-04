@@ -3452,6 +3452,11 @@ a.read-more-btn2.btn:hover {
     color: #fff;
 }
 
+.w3l-banner-slider-main .overlay-register button.overlay-close1 {
+    z-index: 9999;
+    color: #fff;
+}
+
 .w3l-banner-slider-main .btn-open:after {
     color: #333;
     transition-property: all 0.2s linear 0s;
@@ -3463,6 +3468,16 @@ a.read-more-btn2.btn:hover {
 }
 
 .w3l-banner-slider-main .overlay-login.open .btn-close:after {
+    color: #fff;
+    font-family: "FontAwesome";
+    transition-property: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+    -moz-transition: all 0.2s linear 0s;
+    -webkit-transition: all 0.2s linear 0s;
+    -o-transition: all 0.2s linear 0s;
+}
+
+.w3l-banner-slider-main .overlay-register.open .btn-close:after {
     color: #fff;
     font-family: "FontAwesome";
     transition-property: all 0.2s linear 0s;
@@ -3495,7 +3510,25 @@ a.read-more-btn2.btn:hover {
     -o-border-radius: 6px;
     -moz-border-radius: 6px;
 }
-
+.w3l-banner-slider-main .overlay-register button.overlay-close1 {
+    z-index: 999;
+    color: #fff;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    overflow: hidden;
+    background: none;
+    color: #fff;
+    border: 2px solid #232020;
+    cursor: pointer;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -o-border-radius: 6px;
+    -moz-border-radius: 6px;
+}
 .w3l-banner-slider-main .overlay-login {
     display: none;
     position: fixed;
@@ -3512,7 +3545,22 @@ a.read-more-btn2.btn:hover {
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
 }
-
+.w3l-banner-slider-main .overlay-register {
+    display: none;
+    position: fixed;
+    top: 0;
+    background: #3a3535;
+    overflow: auto;
+    z-index: 9999;
+    padding: 3em 3em;
+    right: 0;
+    height: 100%;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
 .w3l-banner-slider-main .login-bghny {
     background: #232020;
     border-radius: 6px;
@@ -4407,6 +4455,9 @@ a.read-more-btn2.btn:hover {
     }
 
     .w3l-banner-slider-main .overlay-login {
+        padding: 2em 2em;
+    }
+    .w3l-banner-slider-main .overlay-register {
         padding: 2em 2em;
     }
 }
