@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MedicineController;     
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class, 'showProduct'])->name('show-product');
+Route::get('/medicine/{id}', [MedicineController::class, 'showMedicine'])->name('show-medicine');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+Route::get('/medicine', [MedicineController::class, 'index'])->name('medicines');
+
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
@@ -27,6 +31,10 @@ Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login
 
 Route::get('/product/1', function () {
     return view('singleProductView');
+});
+
+Route::get('/medicine/1', function () {
+    return view('medicine/singleMedicineView');
 });
 
 Route::get('/cart', function () {

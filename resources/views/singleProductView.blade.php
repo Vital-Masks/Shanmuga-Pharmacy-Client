@@ -10,7 +10,7 @@
 			<div class="row mt-5">
 				<div class="col-lg-6">
 					<div class="single_product_img">
-						<img src="{{ asset("assets/images/1.jpg") }}" alt="">
+						<img src="{{ asset('assets/images/1.jpg') }}" alt="">
 					</div>
 				</div>
 				<div class="col-lg-6">

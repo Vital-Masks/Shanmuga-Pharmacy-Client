@@ -12,9 +12,11 @@ class Medicine extends Model
     public function medicineImages(){
         return $this->hasMany(MedicineImage::class);
     }
+   
 
     public function medicineDetails(){
         return $this->hasMany(MedicineDetail::class);
     }
+
 
 }
