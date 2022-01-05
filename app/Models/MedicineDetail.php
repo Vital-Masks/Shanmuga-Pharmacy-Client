@@ -13,6 +13,10 @@ class MedicineDetail extends Model
         'genericName',
         'brand',
         'dossageWeight',
+        'category',
+        'disease',
+        'description',
+        'ageCategory'
     ];
 
     public function medicine()
