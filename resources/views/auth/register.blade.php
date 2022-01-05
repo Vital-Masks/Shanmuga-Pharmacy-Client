@@ -19,14 +19,21 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <p class="login-texthny mb-2">Address</p>
-                    <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp">
+                    <p class="login-texthny mb-2">NIC</p>
+                    <input type="text" class="form-control" id="nic" name="nic" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group col-md-6">
                     <p class="login-texthny mb-2">Phone Number</p>
                     <input type="text" class="form-control" id="phoneNumber" name="phoneNumber">
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <p class="login-texthny mb-2">Address</p>
+                    <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp">
+                </div>
+            </div>
+
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <p class="login-texthny mb-2">City</p>

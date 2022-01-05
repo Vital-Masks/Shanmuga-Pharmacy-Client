@@ -16,7 +16,7 @@
 				<div class="col-lg-6">
 					<div>
 						<h5>{{$product->name}}</h5>
-						<h2>{{$product->presentPrice()}}</h2>
+						<h2>LKR {{$product->productDetails[0]->presentPrice()}}</h2>
 						<p>{{$product->description}}</p>
 					</div>
 					<div>
@@ -34,38 +34,44 @@
 						</table>
 					</div>
 					<div>
-						<div class="row mt-4">
-							<div class="col-sm-3">
-								<h6>Quantity</h6>
-								<div class="input-group">
-									<span class="input-group-prepend">
-										<button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-											<span class="fa fa-minus"></span>
-										</button>
-									</span>
-									<input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-									<span class="input-group-append">
-										<button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
-											<span class="fa fa-plus"></span>
-										</button>
-									</span>
+						<form class="add-to-card" action="{{ route('addToCart') }}" method="post">
+							{{ csrf_field() }}
+							<div class="row mt-4">
+								<!-- <div class="col-sm-3">
+									<h6>Quantity</h6>
+									<div class="input-group">
+										<span class="input-group-prepend">
+											<button type="button" class="btn btn-outline-secondary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+												<span class="fa fa-minus"></span>
+											</button>
+										</span>
+										<input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+										<span class="input-group-append">
+											<button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
+												<span class="fa fa-plus"></span>
+											</button>
+										</span>
+									</div>
+								</div> -->
+								<div class="ml-4">
+									<h5>Size</h5>
+									@foreach($product->productDetails as $item)
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="price" id="priceRange_{{$item->id}}" value="{{$item->price}}">
+										<label class="form-check-label" for="priceRange_{{$item->id}}">{{$item->weight}} <br /> LKR {{$item->presentPrice()}}</label>
+									</div>
+									@endforeach
 								</div>
+
 							</div>
-							<div class="ml-4">
-								<h5>Size</h5>
-								@foreach($product->productDetails as $item)
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-									<label class="form-check-label" for="inlineRadio1">{{$item->weight}} <br/> LKR {{$item->price}}</label>
-								</div>
-								@endforeach
+							<div class="mt-5">
+								<!-- <button class="btn btn-info">Buy Now</button>	 -->
+								<input type="hidden" name="id" value="{{ $product->id }}">
+								<button type="submit" class="btn btn-success btn-block">Add to cart</button>
 							</div>
-						</div>
+						</form>
 					</div>
-					<div class="mt-5">
-						<button class="btn btn-info">Buy Now</button>
-						<button class="btn btn-success">Add to cart</button>
-					</div>
+
 				</div>
 			</div>
 		</div>
@@ -260,4 +266,14 @@
 </section>
 <!-- Features Section End -->
 
+@endsection
+
+@section('extra-js')
+<script>
+	$(document).ready(function() {});
+
+	$('#priceRange').change(function() {
+		alert();
+	});
+</script>
 @endsection

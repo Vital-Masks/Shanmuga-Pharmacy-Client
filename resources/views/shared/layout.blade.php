@@ -5,8 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SpryStore E-commerce Category Bootstrap Responsive Website Template | Home :: W3layouts</title>
+    <title>Sanmuka Medicals</title>
 
+    <link rel="icon" type="image/x-icon" href="{{asset('/img/favicon.jpg')}}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style-starter.css')}}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/styles.css')}}">
@@ -23,6 +24,11 @@
         @yield('content')
         @include('shared.footer')
     </section>
+
+
+    <script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/jquery-2.1.4.min.js')}}"></script>
+    @yield('extra-js')
 
     <script>
         // When the user scrolls down 20px from the top of the document, show the button
@@ -49,8 +55,7 @@
 
 
 </html>
-<script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js')}}"></script>
-<script src="{{ URL::asset('assets/js/jquery-2.1.4.min.js')}}"></script>
+
 
 <!--/login-->
 <script>

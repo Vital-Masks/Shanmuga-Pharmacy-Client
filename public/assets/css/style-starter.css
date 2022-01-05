@@ -6631,6 +6631,21 @@ iframe {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
+.w3l-ecommerce-main .product-grid2 .social li button {
+    color: #232020;
+    background-color: #fff;
+    font-size: 17px;
+    line-height: 45px;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    display: block;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
 .w3l-ecommerce-main .product-grid2 .social li a:hover {
     color: #fff;
     background-color: #008700;
