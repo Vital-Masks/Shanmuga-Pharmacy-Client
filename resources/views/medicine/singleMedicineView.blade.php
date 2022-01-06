@@ -11,11 +11,11 @@
 				<div class="col-lg-6">
 					<div class="single_product_img">
                     @forelse($medicine->medicineImages as $key=>$image)
-                                <div class="carousel-item {{$loop->first ? 'active' : ''}}">
+                                <div  {{$loop->first ? 'active' : ''}}">
                                     <img src="{{asset($image->image_url)}}">
                                 </div>
                                 @empty
-                                <div class="carousel-item active">
+                                <div >
                                     <img src="{{asset('/img/no-image.png')}}">
                                 </div>
                                 @endforelse                    
