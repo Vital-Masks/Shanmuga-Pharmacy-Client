@@ -5,10 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MedicineImage extends Model
+class MedicineDetail extends Model
 {
     use HasFactory;
-    protected $fillable = ['medicine_id', 'image_url'];
+
+    protected $fillable = [
+        'genericName',
+        'brand',
+        'dossageWeight',
+        'category',
+        'disease',
+        'description',
+        'ageCategory'
+    ];
+
     public function medicine()
     {
         return $this->belongsTo(Medicine::class);
