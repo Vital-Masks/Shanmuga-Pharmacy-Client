@@ -9,6 +9,14 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'brand_id',
+        'discount',
+        'category_id',
+        'description'
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -19,15 +27,18 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
-    public function productImages(){
+    public function productImages()
+    {
         return $this->hasMany(ProductImage::class);
     }
 
-    public function presentPrice(){
-        return 'LKR '.number_format($this->price / 100, 2);
+    public function presentPrice()
+    {
+        return 'LKR ' . number_format($this->price / 100, 2);
     }
 
-    public function productDetails(){
+    public function productDetails()
+    {
         return $this->hasMany(ProductDetail::class);
     }
 }
