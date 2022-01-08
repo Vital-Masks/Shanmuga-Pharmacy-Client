@@ -4,75 +4,108 @@
 
 <!-- Cart Start -->
 <section class="cart_section">
+	@if(Session::has('success'))
+	<div class="alert alert-success fade show" role="alert">
+		{!! session('success') !!}
+		<button type="button" class="close pl-2" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	@endif
+	<div class="py-5">
+		<div class="container py-lg-5">
+			<div class="row mt-5">
+				<div class="col-lg-9">
+					<div class="card products-card p-4">
+						<table class="table table-borderless">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Product</th>
+									<th scope="col">Quantity</th>
+									<th scope="col">Price</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								@php
+								$total = 0
+								@endphp
 
-    <div class="py-5">
-        <div class="container py-lg-5">
-            <div class="row mt-5">
-                <div class="col-lg-9">
-                    <div class="card products-card p-4">
-                        <table class="table table-borderless">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Product</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Camera Canon <br />
-                                        <p>Brand</p>
-                                    </td>
-                                    <td>
-                                        <select class="custom-select">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                        </select>
-                                    </td>
-                                    <td>LKR 1250.00</td>
-                                    <td><button class="btn btn-info"><i class="fa fa-heart"></i></button>
-                                        <button class="btn btn-info"><i class="fa fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card card-biller p-4">
-                        <div class="mb-4">
-                            <h6>Have coupon?</h6>
-                            <div class="input-group my-3">
-                                <input type="text" class="form-control" placeholder="coupon code" aria-label="coupon code" aria-describedby="button-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" id="button-addon2">Apply</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p class="mb-0">Total price:</p>
-                                <h6 class="mb-0">LKR 1500.00</h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mt-2">
-                                <p class="mb-0">Discount:</p>
-                                <h6 class="mb-0"> - LKR 1500.00</h6>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-between mt-2">
-                                <p class="mb-0">Total:</p>
-                                <h6 class="mb-0"> - LKR 1900.00</h6>
-                            </div>
-                            <button class="btn btn-primary btn-block mt-4">Make Purchase</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+								@if(session('cart'))
+								@foreach(session('cart') as $id => $details)
+
+
+								@php
+								$total += $details['price']
+								@endphp
+
+								<tr>
+									<th scope="row">1</th>
+									<td>{{ $details['name'] }} <br />
+										<p>Brand </p>
+									</td>
+									<td>
+										<input type="integer" value="{{ $details['quantity'] }} " class="form-control" style="width: 100px;" />
+									</td>
+									<td>LKR {{ $details['price'] }}</td>
+									<td>
+										<button class="btn btn-info" id="removeFromCart"><i class="fa fa-heart"></i></button>
+										<a href="{{route('remove-cart', $id)}}" class="btn btn-info"><i class="fa fa-trash"></i></a>
+									</td>
+								</tr>
+
+
+
+								@endforeach
+								@else
+								<tr>
+									<th scope="row" colspan="4" class="text-center">Nothing in your Cart!</th>
+								</tr>
+								@endif
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="card card-biller p-4">
+						<div class="mb-4">
+							<h6>Have coupon?</h6>
+							<div class="input-group my-3">
+								<input type="text" class="form-control" placeholder="coupon code" aria-label="coupon code" aria-describedby="button-addon2">
+								<div class="input-group-append">
+									<button class="btn btn-primary" type="button" id="button-addon2">Apply</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="d-flex align-items-center justify-content-between">
+								<p class="mb-0">Total price:</p>
+								<h6 class="mb-0">LKR {{ $total }}</h6>
+							</div>
+							<div class="d-flex align-items-center justify-content-between mt-2">
+								<p class="mb-0">Discount:</p>
+								<h6 class="mb-0"> - LKR 0</h6>
+							</div>
+							<div class="d-flex align-items-center justify-content-between mt-2">
+								<p class="mb-0">Total:</p>
+								<h6 class="mb-0"> - LKR {{ $total }}</h6>
+							</div>
+
+							<!-- <a href="https://api.whatsapp.com/send?phone=+94777453835&text='message'" class=" btn btn-primary btn-block mt-4">Make Purchase</a> -->
+
+							<form action="{{route('make-order')}}" method="post">
+								@csrf
+								<button class="btn btn-primary btn-block mt-4" type="submit">Make Purchase</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <!-- Cart End -->
 

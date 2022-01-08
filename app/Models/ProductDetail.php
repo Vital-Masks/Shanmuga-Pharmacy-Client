@@ -19,4 +19,9 @@ class ProductDetail extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    public function presentPrice()
+    {
+        return 'LKR ' . number_format($this->price / 100, 2);
+    }
 }
