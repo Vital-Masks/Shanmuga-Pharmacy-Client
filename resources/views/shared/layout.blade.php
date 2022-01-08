@@ -17,7 +17,6 @@
     <!-- Template CSS -->
 </head>
 
-
 <body>
     <section class="w3l-banner-slider-main">
         @include('shared.header')
@@ -52,7 +51,6 @@
     </script>
     <!-- /move top -->
 </body>
-
 
 </html>
 

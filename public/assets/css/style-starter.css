@@ -6549,11 +6549,16 @@ iframe {
 
 .w3l-ecommerce-main .product-grid2 {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .w3l-ecommerce-main .product-grid2 .product-image2 {
     overflow: hidden;
     position: relative;
+    height: 200px !important;
+    width: 200px !important;
 }
 
 .w3l-ecommerce-main .product-grid2 .product-image2 a {
@@ -6561,8 +6566,9 @@ iframe {
 }
 
 .w3l-ecommerce-main .product-grid2 .product-image2 img {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
 }
 
 .w3l-ecommerce-main .product-image2 .pic-1 {
