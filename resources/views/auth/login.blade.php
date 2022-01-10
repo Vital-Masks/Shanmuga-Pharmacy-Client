@@ -5,7 +5,7 @@
     <h5 class="text-center mb-4">Login Now</h5>
     <div class="login-bghny p-md-5 p-4 mx-auto mw-100">
         <!--/login-form-->
-        <form method="post" action="{{ route('login.custom' )}}">
+        <form method="post" action="{{ route('login-custom' )}}">
             @csrf
             <div class="form-group">
                 <p class="login-texthny mb-2">Email address</p>
@@ -27,7 +27,6 @@
                 </div>
             </div>
             <button type="submit" class="submit-login btn mb-4">Sign In</button>
-
         </form>
         <!--//login-form-->
     </div>

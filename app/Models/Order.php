@@ -10,14 +10,20 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
+        'order_number',
+        'user_id',
         'product_id',
-        'customer_name',
-        'email',
-        'phone',
+        'grand_total',
+        'item_count',
+        'payment_method',
+        'first_name',
+        'last_name',
         'address',
-        'qty',
-        'price',
-        'name',
+        'city',
+        'country',
+        'post_code',
+        'phone_number',
+        'notes',
     ];
 
     public function cakes()

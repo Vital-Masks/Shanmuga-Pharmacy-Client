@@ -40,7 +40,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="prescription" name="prescription">
+                            <input accept=".jpg" type="file" class="custom-file-input" id="prescription" name="prescription">
                             <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose prescription image</label>
                         </div>
                         <div class="input-group-append">

@@ -73,7 +73,7 @@
 						</div>
 						<h6 class="ml-2 m-0">
 							Hello {{ Auth::user()->name }}
-							<a class="btn-open" href="#">
+							<a class="btn-open" href="{{route('log-out')}}">
 								<span class="fa fa-sign-out" aria-hidden="true"></span>
 							</a>
 						</h6>

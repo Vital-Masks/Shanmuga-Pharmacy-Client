@@ -8,7 +8,7 @@
             <div class="row story-6-grids text-left">
                 <div class="col-lg-5 story-gd avatar">
                     <img src="assets/images/left2.jpg" class="img-fluid" alt="/">
-                    <button type="submit" class="btn btn-success btn-block mt-3">Logout</button>
+                    <a class="btn btn-success btn-block mt-3" href="{{route('log-out')}}">Logout</a>
                 </div>
                 <div class="col-lg-7 story-gd pl-lg-4">
                     <h3 class="hny-title">Your <span>Profile</span></h3>

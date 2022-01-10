@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 class AuthController extends Controller
 {
@@ -70,7 +71,7 @@ class AuthController extends Controller
 
     public function customLogin(Request $request)
     {
-        // echo "<pre>"; print_r($request->all()); die;
+
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -80,6 +81,14 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             return redirect('/')->withSuccess('Signed in');
         }
-        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect("/")->withSuccess('Login details are not valid');
+    }
+
+    public function signOut()
+    {
+        FacadesSession::flush();
+        Auth::logout();
+
+        return Redirect('/');
     }
 }

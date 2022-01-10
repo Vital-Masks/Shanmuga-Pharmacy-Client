@@ -15,24 +15,15 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('order_number')->unique();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->decimal('grand_total', 20, 6);
             $table->unsignedInteger('item_count');
-
-            $table->string('payment_method')->nullable();
-
             $table->string('first_name');
             $table->string('last_name');
-            $table->text('address');
-            $table->string('city');
-            $table->string('country');
-            $table->string('post_code');
             $table->string('phone_number');
-            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

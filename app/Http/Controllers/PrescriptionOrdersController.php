@@ -35,10 +35,11 @@ class PrescriptionOrdersController extends Controller
             $image_ext = $image->getClientOriginalExtension();
             $filename = rand(111, 99999) . "." . $image_ext;
             $folder = '/img/prescriptions/';
+            $path = $folder . $filename;
             $image->move(public_path($folder), $filename);
         }
 
-        $order->prescription = $filename;
+        $order->prescription = $path;
         $order->save();
 
         return back()->with('flash_message_success', 'Prescription created successfully!');

@@ -36,11 +36,9 @@ Route::get('/medicine', [MedicineController::class, 'index'])->name('medicines')
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/customer-register', [AuthController::class, 'customerRegister'])->name('customer-register');
-Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom');
+Route::post('login-custom', [AuthController::class, 'customLogin'])->name('login-custom');
+Route::get('log-out', [AuthController::class, 'signOut'])->name('log-out');
 
-// Route::get('/product/1', function () {
-//     return view('singleProductView');
-// });
 
 Route::get('/medicine/1', function () {
     return view('medicine/singleMedicineView');
@@ -71,8 +69,10 @@ Route::resource('categories', AdminCategoryController::class);
 Route::resource('brands', AdminBrandController::class);
 
 // Auth
-// Route::get('/', [AdminAuthController::class, 'dashboard']);
+
 Route::get('dashboard', [AdminAuthController::class, 'dashboard']);
+Route::get('show-prescription/{id}', [AdminAuthController::class, 'showPrescription'])->name('showprescription');
+Route::post('delete-prescription/{id}', [AdminAuthController::class, 'deletePrescription'])->name('delete-prescription');
 Route::get('admin-login', [AdminAuthController::class, 'index'])->name('admin-login');
 Route::post('custom-login', [AdminAuthController::class, 'customLogin'])->name('login.custom');
 Route::get('admin-registration', [AdminAuthController::class, 'registration'])->name('register-user');
