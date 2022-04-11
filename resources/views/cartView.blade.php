@@ -120,11 +120,11 @@
 <!-- Cart End -->
 
 <!-- Shopping Section Start -->
-<section class="w3l-ecommerce-main">
-	<!-- /products-->
+<!-- <section class="w3l-ecommerce-main">
+
 	<div class="ecom-contenthny">
 		<div class="container py-lg-5">
-			<!-- /row-->
+	
 			<div class="ecom-products-grids row mt-lg-5 mt-3">
 				<div class="col-lg-3 col-6 product-incfhny mt-4">
 					<div class="product-grid2 transmitv">
@@ -254,10 +254,10 @@
 
 				</div>
 			</div>
-			<!-- //row-->
+
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- Shopping Section End -->
 
 <!-- Features Section Start -->

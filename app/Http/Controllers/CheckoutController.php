@@ -24,6 +24,13 @@ class CheckoutController extends Controller
                     'phone_number' => Auth::user()->phone,
                 ]);
             }
+            $myEmail = 'ginthozanv@gmail.com';
+            $details = [
+                'title' => 'Orders from www.sanmukamedicals.com',
+                'body' =>  "An order has been made just now!",
+            ];
+
+            Mail::to($myEmail)->send(new NewOrder($details));
             return back()->with('success', 'Order made successfully! We will contact you shortly.');
         }
         // Mail::to('vginthu@gmail.com')->send(new NewOrder($orders));

@@ -5,8 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Sanmuka Medicals</title>
-
     <link rel="icon" type="image/x-icon" href="{{asset('/img/favicon.jpg')}}">
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style-starter.css')}}">
@@ -14,6 +14,12 @@
     <!-- Template CSS -->
     <link href="//fonts.googleapis.com/css?family=Oswald:300,400,500,600&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900&display=swap" rel="stylesheet">
+    <script src="{{ URL::asset('assets/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/jquery-2.1.4.min.js')}}"></script>
+
+
+
     <!-- Template CSS -->
 </head>
 
@@ -25,8 +31,7 @@
     </section>
 
 
-    <script src="{{ URL::asset('assets/js/jquery-3.3.1.min.js')}}"></script>
-    <script src="{{ URL::asset('assets/js/jquery-2.1.4.min.js')}}"></script>
+
     @yield('extra-js')
 
     <script>

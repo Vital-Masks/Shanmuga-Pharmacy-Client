@@ -17,13 +17,12 @@
 				<div class="carousel-item active">
 					<div class="container">
 						<div class="carousel-caption">
-							<h3>Women's
-								Fashion
-								<br>50% Off
+							<h3>Running out of Medicines?
+								<br>Contact Us and Fulfill your Needs
 							</h3>
-							<a href="#" class="shop-button btn">
+							<!-- <a href="#" class="shop-button btn">
 								Shop Now
-							</a>
+							</a> -->
 
 						</div>
 					</div>
@@ -31,13 +30,12 @@
 				<div class="carousel-item item2">
 					<div class="container">
 						<div class="carousel-caption">
-							<h3>Men's
-								Fashion
-								<br>60% Off
+							<h3>Facing Hassle to Wait & Buy?
+								<br>Few steps in Door Delivery
 							</h3>
-							<a href="#" class="shop-button btn">
+							<!-- <a href="#" class="shop-button btn">
 								Shop Now
-							</a>
+							</a> -->
 
 						</div>
 					</div>
@@ -45,13 +43,12 @@
 				<div class="carousel-item item3">
 					<div class="container">
 						<div class="carousel-caption">
-							<h3>Women's
-								Fashion
-								<br>50% Off
+							<h3>Need to Wait in Que to buy Medicines ?
+								<br>Order Through our Website & Collect it Instantly
 							</h3>
-							<a href="#" class="shop-button btn">
+							<!-- <a href="#" class="shop-button btn">
 								Shop Now
-							</a>
+							</a> -->
 
 						</div>
 					</div>
@@ -59,13 +56,12 @@
 				<div class="carousel-item item4">
 					<div class="container">
 						<div class="carousel-caption">
-							<h3>Men's
-								Fashion
-								<br>60% Off
+							<h3>Unable to find and buy your medicine?
+								<br>Visit our Products section and Order it
 							</h3>
-							<a href="#" class="shop-button btn">
+							<!-- <a href="#" class="shop-button btn">
 								Shop Now
-							</a>
+							</a> -->
 						</div>
 					</div>
 				</div>
@@ -82,29 +78,6 @@
 	</div>
 </section>
 <!-- Banner Section End-->
-
-<!-- Description Section Start -->
-<section class="w3l-content-w-photo-6">
-	<!-- /specification-6-->
-	<div class="content-photo-6-mian py-5">
-		<div class="container py-lg-5">
-			<div class="align-photo-6-inf-cols row">
-
-				<div class="photo-6-inf-right col-lg-6">
-					<h3 class="hny-title text-left">All Branded Men's Suits are Flat <span>30% Discount</span></h3>
-					<p>Visit our shop to see amazing creations from our designers.</p>
-					<a href="#" class="read-more btn">
-						Shop Now
-					</a>
-				</div>
-				<div class="photo-6-inf-left col-lg-6">
-					<img src="assets/images/1.jpg" class="img-fluid" alt="">
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- Description Section End -->
 
 <!-- Shopping Section Start -->
 <section class="w3l-ecommerce-main">
@@ -165,6 +138,7 @@
 </section>
 <!-- Shopping Section End -->
 
+
 <!-- Our Branches Section Start -->
 <section class="w3l-video-6">
 	<!-- /video-6-->
@@ -202,8 +176,67 @@
 </section>
 <!-- Our Branches Section End -->
 
+<!-- Shopping Section Start -->
+<section class="w3l-ecommerce-main">
+	<!-- /products-->
+	<div class="ecom-contenthny py-5">
+		<div class="container py-lg-5">
+			<h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
+			<p class="text-center">Handpicked Favourites just for you</p>
+			<!-- /row-->
+			<div class="ecom-products-grids row mt-lg-5 mt-3">
+				@forelse($products as $product)
+				<div class="col-lg-3 col-6 product-incfhny mt-4">
+					<div class="product-grid2 transmitv">
+						<div class="product-image2">
+
+							@if($product->productImages->count())
+							<img class="pic-1 img-fluid" src="{{asset($product->productImages[0]->image_url)}}">
+							<img class="pic-2 img-fluid" src="{{asset($product->productImages[0]->image_url)}}">
+							@else
+							<img class="pic-1 img-fluid" src="{{asset('/img/no-image.png')}}">
+							<img class="pic-2 img-fluid" src="{{asset('/img/no-image.png')}}">
+							@endif
+
+							<ul class="social">
+								<li><a href="{{route('show-product', $product->id)}}" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+
+								<li>
+									<form class="add-to-card" action="{{ route('addToCart') }}" method="post">
+										{{ csrf_field() }}
+										<input type="hidden" name="id" value="{{ $product->id }}">
+										<input type="hidden" name="price" value="{{ $product->productDetails[0]->price }}">
+										<button type="submit"><span class="fa fa-shopping-bag"></span></button>
+									</form>
+
+								</li>
+							</ul>
+							<div class="transmitv single-item">
+								<form class="add-to-card" action="{{ route('addToCart') }}" method="post">
+									{{ csrf_field() }}
+									<input type="hidden" name="id" value="{{ $product->id }}">
+									<input type="hidden" name="price" value="{{ $product->productDetails[0]->price }}">
+									<button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">Add to Cart</button>
+								</form>
+							</div>
+						</div>
+						<div class="product-content">
+							<h3 class="title"><a href="{{route('show-product', $product->id)}}">{{$product->name}}</a></h3>
+							<span class="price"> LKR {{$product->productDetails[0]->presentPrice()}} </span>
+						</div>
+					</div>
+				</div>
+				@empty
+				@endforelse
+			</div>
+			<!-- //row-->
+		</div>
+	</div>
+</section>
+<!-- Shopping Section End -->
+
 <!-- Features Section Start -->
-<section class="features-4">
+<!-- <section class="features-4">
 	<div class="features4-block py-5">
 		<div class="container py-lg-5">
 			<h6>We are the best</h6>
@@ -245,7 +278,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- Features Section End -->
 
 @endsection

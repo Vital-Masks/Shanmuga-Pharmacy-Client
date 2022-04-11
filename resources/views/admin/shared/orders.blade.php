@@ -13,9 +13,8 @@
                         </label>
                     </th>
                     <th>First Name</th>
-                    <th>Last Name</th>
                     <th>phone</th>
-                    <th>Product Id</th>
+                    <th>product name</th>
                     <th>Item Count</th>
                     <th>Total</th>
                     <th>Date</th>
@@ -32,13 +31,11 @@
                         </label>
                     </td>
                     <td>{{$o->first_name}}</td>
-                    <td>
-                        <span>{{$o->last_name}}</span>
-                    </td>
+
                     <td class="desc">{{$o->phone_number}}</td>
 
                     <td>
-                        <span class="status--process">{{$o->product_id}}</span>
+                        <span class="status--process">{{$o->products->name}}</span>
                     </td>
                     <td>
                         <span class="status--process">{{$o->item_count}}</span>
@@ -51,7 +48,7 @@
                     </td>
                     <td>
                         <div class="table-data-feature">
-                            <a href="{{ route('showprescription', $o->id)}}" class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                            <a href="{{ route('show-order', $o->id)}}" class="item" data-toggle="tooltip" data-placement="top" title="Send">
                                 <i class="zmdi zmdi-eye"></i>
                             </a>
                             <form action="{{ route('delete-prescription', $o->id)}}" method="POST">

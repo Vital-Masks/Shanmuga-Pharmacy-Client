@@ -26,7 +26,7 @@ class Order extends Model
         'notes',
     ];
 
-    public function cakes()
+    public function products()
     {
         return $this->belongsTo('App\Models\Product', 'product_id');
     }

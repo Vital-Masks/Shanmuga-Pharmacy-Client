@@ -19,4 +19,21 @@ class ProductController extends Controller
         }
         return view('productsView', compact('categories','products'));
     }
+
+    public function search(Request $request){
+
+        $pagination = 8;
+        
+        $categories = Category::all();
+
+        $query = $request->search;
+        $products = Product::with('productImages')->where('name','LIKE', "%$query%")->paginate($pagination);
+
+        // dd($products);
+        
+        return view('productsView')->with([
+            'products' => $products,
+            'categories' => $categories
+            ]);
+    }
 }

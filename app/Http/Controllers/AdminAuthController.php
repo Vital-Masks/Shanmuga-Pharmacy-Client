@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\PrescriptionOrders;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Session;
@@ -110,5 +111,11 @@ class AdminAuthController extends Controller
         $prescription->delete();
 
         return back()->with('flash_message_success', 'Prescription deleted successfully!');
+    }
+
+    public function showOrder($id)
+    {
+        $order = Product::find($id);
+        return view('admin.ordersView', compact('order'));
     }
 }

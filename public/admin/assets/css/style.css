@@ -1,3 +1,8 @@
+.product-detail {
+    width: 40%;
+    margin: 0 auto;
+}
+
 .product-detail .card .card-body {
     width: 100%;
 }
@@ -9,7 +14,6 @@
 .product-detail .card .card-body .carousel .carousel-inner img {
     object-fit: cover;
     height: 500px;
-    width: 100%;
 }
 
 .size-item {
@@ -23,4 +27,9 @@
     color: black;
     font-weight: 500;
     border-radius: 10px;
+}
+
+.order-product-detail {
+    display: flex;
+    gap: 20px;
 }
