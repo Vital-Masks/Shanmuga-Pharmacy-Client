@@ -13,6 +13,7 @@ use App\Http\Controllers\PrescriptionOrdersController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MedicineController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,11 +27,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/route-cache', function () {
+    $exitCode = Artisan::call('route:cache');
+    return 'Routes cache cleared';
+})->middleware("guest");
+
+Route::get('/config-cache', function () {
+    $exitCode = Artisan::call('config:cache');
+    return 'Config cache cleared';
+})->middleware("guest");
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class, 'showProduct'])->name('show-product');
 Route::get('/medicine/{id}', [MedicineController::class, 'showMedicine'])->name('show-medicine');
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::get('/medicine', [MedicineController::class, 'index'])->name('medicines');
+Route::get('/search',  [ProductController::class, 'search'])->name('search'); 
 
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
@@ -38,6 +50,10 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/customer-register', [AuthController::class, 'customerRegister'])->name('customer-register');
 Route::post('login-custom', [AuthController::class, 'customLogin'])->name('login-custom');
 Route::get('log-out', [AuthController::class, 'signOut'])->name('log-out');
+
+Route::get('/contact', [HomeController::class, 'showContact'])->name('contactView');
+Route::get('/terms-and-condition', [HomeController::class, 'terms'])->name('terms');
+Route::get('/about', [HomeController::class, 'about'])->name('about');
 
 
 Route::get('/medicine/1', function () {
@@ -68,10 +84,13 @@ Route::resource('medicines', AdminMedicineController::class);
 Route::resource('categories', AdminCategoryController::class);
 Route::resource('brands', AdminBrandController::class);
 
+
+
 // Auth
 
 Route::get('dashboard', [AdminAuthController::class, 'dashboard']);
 Route::get('show-prescription/{id}', [AdminAuthController::class, 'showPrescription'])->name('showprescription');
+Route::get('show-order/{id}', [AdminAuthController::class, 'showOrder'])->name('show-order');
 Route::post('delete-prescription/{id}', [AdminAuthController::class, 'deletePrescription'])->name('delete-prescription');
 Route::get('admin-login', [AdminAuthController::class, 'index'])->name('admin-login');
 Route::post('custom-login', [AdminAuthController::class, 'customLogin'])->name('login.custom');

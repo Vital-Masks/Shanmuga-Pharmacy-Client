@@ -84,8 +84,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'vginthu@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => 'sanmukam-orders@sanmukamedicals.com',
+        'name' => 'Shanmukam Pharmacy',
     ],
 
     /*

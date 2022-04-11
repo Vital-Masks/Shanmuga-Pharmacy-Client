@@ -28,7 +28,7 @@ class NewOrder extends Mailable
      */
     public function build()
     {
-        return $this->subject('Order From Shanmuga')
-            ->view('email.OrderMail');
+        return $this->markdown('email.OrderMail')
+            ->with('details', $this->orders);
     }
 }

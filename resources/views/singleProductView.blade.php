@@ -58,7 +58,9 @@
 									@foreach($product->productDetails as $item)
 									<div class="form-check form-check-inline">
 										<input class="form-check-input" type="radio" name="price" id="priceRange_{{$item->id}}" value="{{$item->price}}">
-										<label class="form-check-label" for="priceRange_{{$item->id}}">{{$item->weight}} <br /> LKR {{$item->presentPrice()}}</label>
+
+										<label class="form-check-label" for="priceRange_{{$item->id}}">
+											{{$item->weight}} <br /> LKR {{$item->presentPrice()}}</label>
 									</div>
 									@endforeach
 								</div>
@@ -80,11 +82,11 @@
 <!-- Single Product End -->
 
 <!-- Shopping Section Start -->
-<section class="w3l-ecommerce-main">
-	<!-- /products-->
+<!-- <section class="w3l-ecommerce-main">
+
 	<div class="ecom-contenthny">
 		<div class="container py-lg-5">
-			<!-- /row-->
+	
 			<div class="ecom-products-grids row mt-lg-5 mt-3">
 				<div class="col-lg-3 col-6 product-incfhny mt-4">
 					<div class="product-grid2 transmitv">
@@ -214,14 +216,14 @@
 
 				</div>
 			</div>
-			<!-- //row-->
+	
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- Shopping Section End -->
 
 <!-- Features Section Start -->
-<section class="features-4">
+<!-- <section class="features-4">
 	<div class="features4-block py-5">
 		<div class="container py-lg-5">
 			<h6>We are the best</h6>
@@ -263,7 +265,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- Features Section End -->
 
 @endsection

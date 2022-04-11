@@ -1,17 +1,14 @@
 <section class="w3l-footer-22">
     <!-- footer-22 -->
-    <div class="footer-hny py-5">
+    <div class="footer-hny ">
         <div class="container py-lg-5">
             <div class="text-txt row">
                 <div class="left-side col-lg-4">
-                    <h3><a class="logo-footer" href="index.html">
-                            Spry<span class="lohny">S</span>tore</a></h3>
-                    <!-- if logo is image enable this   
-                                    <a class="navbar-brand" href="#index.html">
-                                        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                                    </a> -->
-                    <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
-                        a ligula quam. Ut blandit eu leo non suscipit. </p>
+                    <a class="navbar-brand" href="{{route('home')}}">
+                        <img src="{{asset('/img/logo2.png')}}" alt="Your logo" title="Your logo" style="height:55px;" />
+                    </a>
+
+                    <!-- <p>We are best known as experts in the Medical Industry. We have earned our reputation through decades of excellence in the industry. Fulfilling your medication needs is our primary goal </p> -->
                     <ul class="social-footerhny mt-lg-2 mt-2">
 
                         <li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
@@ -25,82 +22,24 @@
                     </ul>
                 </div>
 
-                <div class="right-side col-lg-8 pl-lg-5">
+                <!-- <div class="right-side col-lg-8 pl-lg-5">
                     <h4>Women's Day Special Offer
                         All Branded Sandals are Flat 50% Discount</h4>
-                 
-                </div>
+
+                </div> -->
             </div>
 
-            <div class="d-flex justify-content-between mt-5">
-                <div class="sub-one-left">
-                    <h6>Useful Links</h6>
-                    <div class="footer-hny-ul">
-                        <ul>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sub-one-left">
-                    <h6>Useful Links</h6>
-                    <div class="footer-hny-ul">
-                        <ul>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sub-one-left">
-                    <h6>Useful Links</h6>
-                    <div class="footer-hny-ul">
-                        <ul>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sub-one-left">
-                    <h6>Useful Links</h6>
-                    <div class="footer-hny-ul">
-                        <ul>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sub-one-left">
-                    <h6>Useful Links</h6>
-                    <div class="footer-hny-ul">
-                        <ul>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="contact.html">Support</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <!-- Footer bottom -->
             <div class="below-section row">
                 <div class="columns col-lg-6">
                     <ul class="jst-link">
-                        <li><a href="#">Privacy Policy </a> </li>
-                        <li><a href="#">Term of Service</a></li>
-                        <li><a href="contact.html">Customer Care</a> </li>
+                        <li><a href="{{route('terms')}}">Privacy Policy </a> </li>
+                        <li><a href="{{route('terms')}}">Term of Service</a></li>
                     </ul>
                 </div>
                 <div class="columns col-lg-6 text-lg-right">
-                    <p>© 2020 SpryStore. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">
-                            W3Layouts</a>
+                    <p>© 2020 sanmukamedicals.com. All rights reserved. Design by
+                        vitalmasks
                     </p>
                 </div>
                 <button onclick="topFunction()" id="movetop" title="Go to top">
