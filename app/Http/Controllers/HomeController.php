@@ -18,4 +18,19 @@ class HomeController extends Controller
         $product = Product::find($id);
         return view('singleProductView', compact('product'));
     }
+
+    public function showContact()
+    {
+        return view('contactView');
+    }
+
+    public function terms()
+    {
+        return view('TnCView');
+    }
+
+    public function about()
+    {
+        return view('about');
+    }
 }

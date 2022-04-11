@@ -23,7 +23,16 @@
                     <div class="side_filter__section">
                         <div class="filter__section_1 p-2">
                             <div>
-                                <input class="form-control" placeholder="search" />
+                                <form action="{{ route('search') }}" method="get">
+
+                                    <div class="input-group filter-bar-search">
+                                        {{ csrf_field() }}
+                                        <input class="form-control" placeholder="search" name="search" id="search"/>
+                                        <button type="submit"><span class="fa fa-search" aria-hidden="true"></button>
+
+                                    </div>
+                                </form>
+
                             </div>
                             <div class="mt-2">
                                 <ul>
@@ -80,6 +89,7 @@
                                                 {{ csrf_field() }}
                                                 <input type="hidden" name="id" value="{{ $product->id }}">
                                                 <input type="hidden" name="price" value="{{ $product->productDetails[0]->price }}">
+                                                <input type="hidden" name="weight" value="{{ $product->productDetails[0]->weight }}">
                                                 <button type="submit"><span class="fa fa-shopping-bag"></span></button>
                                             </form>
 
@@ -90,6 +100,7 @@
                                             {{ csrf_field() }}
                                             <input type="hidden" name="id" value="{{ $product->id }}">
                                             <input type="hidden" name="price" value="{{ $product->productDetails[0]->price }}">
+                                            <input type="hidden" name="weight" value="{{ $product->productDetails[0]->weight }}">
                                             <button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">Add to Cart</button>
                                         </form>
                                     </div>

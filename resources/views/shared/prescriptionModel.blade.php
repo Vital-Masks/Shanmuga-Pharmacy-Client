@@ -8,19 +8,16 @@
                 </button>
             </div>
 
-            <form method="POST" action="{{ route('create-prescription') }}" name="prescription-create" id="prescription-create" enctype="multipart/form-data" class="form-horizontal">
+
+
+            <form method="POST" action="{{ route('create-prescription') }}" name="prescription-create" id="prescriptionCreate" enctype="multipart/form-data" class="form-horizontal">
                 {{ csrf_field() }}
+
                 <div class="modal-body">
-                    @if ($errors->any())
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Whoops!</strong> There were some problems with your input.<br>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
+                    <div class="alert alert-danger" role="alert" id="prescriptionFailedAlert">
+                        <ul id="prescriptionErrorlist">
                         </ul>
                     </div>
-                    @endif
 
                     <div class="form-group">
                         <label for="userName">Name</label>
@@ -40,7 +37,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="prescription" name="prescription">
+                            <input accept=".jpg" type="file" class="custom-file-input" id="prescription" name="prescription">
                             <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose prescription image</label>
                         </div>
                         <div class="input-group-append">
@@ -58,3 +55,50 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#prescriptionFailedAlert').hide();
+    });
+
+    $(function() {
+        // jQuery, bind an event handler or use some other way to trigger ajax call.
+        $('#prescriptionCreate').submit(function(event) {
+            event.preventDefault();
+            var form = $('#prescriptionCreate')[0];
+            var data = new FormData(form);
+
+            jQuery.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                },
+                type: 'post',
+                enctype: 'multipart/form-data',
+                url: '/create-prescription',
+                data: data,
+                processData: false, // Important!
+                contentType: false,
+                cache: false,
+                success: function(_response) {
+                    // Handle your response..
+                    if (_response.success) {
+                        location.reload();
+                    } else {
+                        $('#prescriptionFailedAlert').show();
+                    }
+                },
+                error: function(_response) {
+                    console.log(_response)
+                    // Handle error
+                    var html = '';
+                    $.each(_response.responseJSON.errors, function(key, value) {
+                        html += '<li>' + value + '</li>';
+                    });
+                    $('#prescriptionErrorlist').html(html);
+                    $('#prescriptionFailedAlert').show();
+
+                }
+            });
+        });
+    });
+</script>

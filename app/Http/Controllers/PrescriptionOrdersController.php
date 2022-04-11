@@ -13,13 +13,24 @@ class PrescriptionOrdersController extends Controller
         // echo "<pre>";
         // print_r($request->all());
         // die;
-        $request->validate([
-            'userName' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
-            'nic' => 'required',
-            'prescription' => 'required',
-        ]);
+        $request->validate(
+            [
+                'userName' => 'required',
+                'email' => 'required|email|max:255|regex:/(.*)@gmail\.com/i',
+                'phone' => 'required',
+                'nic' => 'required|regex:/^[0-9]{9}[vVxX]$/',
+                'prescription' => 'required',
+            ],
+            [
+                'userName.required' => 'Name is required',
+                'email.required' => 'Email is required',
+                'email.regex:' => 'Email format is wrong!',
+                'phone.required' => 'Phone is required',
+                'nic.required' => 'NIC is required',
+                'nic.regex' => 'NIC format is wrong!',
+                'prescription.required' => 'Prescription is required',
+            ]
+        );
 
         $order = new PrescriptionOrders();
 
@@ -35,12 +46,18 @@ class PrescriptionOrdersController extends Controller
             $image_ext = $image->getClientOriginalExtension();
             $filename = rand(111, 99999) . "." . $image_ext;
             $folder = '/img/prescriptions/';
+            $path = $folder . $filename;
             $image->move(public_path($folder), $filename);
         }
 
-        $order->prescription = $filename;
+        $order->prescription = $path;
         $order->save();
 
-        return back()->with('flash_message_success', 'Prescription created successfully!');
+        if ($order->wasRecentlyCreated === true) {
+            $sen['success'] = true;
+            return response()->json($sen);
+        }
+        $sen['success'] = false;
+        return response()->json($sen);
     }
 }

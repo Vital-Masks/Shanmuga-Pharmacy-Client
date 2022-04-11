@@ -4095,7 +4095,7 @@ a.read-more-btn2.btn:hover {
 }
 
 .w3l-banner-slider-main .carousel-item {
-    background: url(../images/banner1.jpg) no-repeat center;
+    background: url(../images/banner/img1.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -4104,7 +4104,7 @@ a.read-more-btn2.btn:hover {
 }
 
 .w3l-banner-slider-main .carousel-item.item2 {
-    background: url(../images/banner2.jpg) no-repeat center;
+    background: url(../images/banner/img2.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -4113,7 +4113,7 @@ a.read-more-btn2.btn:hover {
 }
 
 .w3l-banner-slider-main .carousel-item.item3 {
-    background: url(../images/banner3.jpg) no-repeat center;
+    background: url(../images/banner/img3.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -4122,7 +4122,7 @@ a.read-more-btn2.btn:hover {
 }
 
 .w3l-banner-slider-main .carousel-item.item4 {
-    background: url(../images/banner4.jpg) no-repeat center;
+    background: url(../images/banner/img4.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -7586,14 +7586,17 @@ iframe {
 }
 
 .w3l-services-6 .services-grids-6 {
-    background: url(../images/banner4.jpg) no-repeat center;
+    /* background: url(../images/banner/img3.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
     -moz-background-size: cover;
     z-index: 0;
-    position: relative;
+    position: relative; */
+    background-color: #f5f5f5;
+
+    color: black !important;
 }
 
 .w3l-services-6 .services-grids-6::before {
@@ -7612,7 +7615,7 @@ iframe {
 }
 
 .w3l-services-6 .w3-icon-grid1 a h3 {
-    color: #fff;
+    color: #000;
     font-size: 26px;
     line-height: 27px;
     float: left;
@@ -7641,7 +7644,7 @@ iframe {
     line-height: 26px;
     padding: 0 0em;
     margin: 0;
-    color: #fff;
+    color: #000;
     opacity: 0.8;
 }
 

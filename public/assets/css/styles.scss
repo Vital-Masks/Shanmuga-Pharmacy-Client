@@ -3,7 +3,12 @@
 // 🌟 common:
 
 .w3l-banner-slider-main header.tophny-header {
-    background-color: $primary_green !important;
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3),
+        transparent
+    ) !important;
 }
 
 .btn-primary {
@@ -102,4 +107,34 @@
     width: 400px;
     border-radius: 50% !important;
     object-fit: cover;
+}
+
+// medicine catelog
+
+.catelog-medicine .brand-title {
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
+
+.catelog-medicine .catelog-content {
+    display: flex;
+    gap: 20px;
+}
+
+.catelog-medicine .catelog-content img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.catelog-medicine .catelog-content .details {
+    padding: 10px;
+}
+
+.catelog-medicine .catelog-content .details p {
+    margin: 2px 0;
 }

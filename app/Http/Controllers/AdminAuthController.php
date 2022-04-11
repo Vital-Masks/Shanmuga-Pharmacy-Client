@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use App\Models\PrescriptionOrders;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Session;
@@ -73,7 +76,9 @@ class AdminAuthController extends Controller
     public function dashboard()
     {
         if (Auth::check() && auth()->user()->is_admin == 1) {
-            return view('admin.dashboard');
+            $prescription = PrescriptionOrders::paginate(5);
+            $orders = Order::paginate(5);
+            return view('admin.dashboard', compact('prescription', 'orders'));
         }
 
         return redirect("admin-login")->with('message', 'You are not allowed to access!');
@@ -86,5 +91,31 @@ class AdminAuthController extends Controller
         Auth::logout();
 
         return Redirect('admin-login');
+    }
+
+    public function showPrescription($id)
+    {
+
+        $prescription = PrescriptionOrders::find($id);
+        return view('admin.prescriptionView', compact('prescription'));
+    }
+
+    public function deletePrescription($id)
+    {
+
+        $prescription = PrescriptionOrders::find($id);
+
+        if (file_exists(public_path() . $prescription->prescription)) {
+            unlink(public_path() . $prescription->prescription);
+        }
+        $prescription->delete();
+
+        return back()->with('flash_message_success', 'Prescription deleted successfully!');
+    }
+
+    public function showOrder($id)
+    {
+        $order = Product::find($id);
+        return view('admin.ordersView', compact('order'));
     }
 }

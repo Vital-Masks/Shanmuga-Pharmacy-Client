@@ -4,16 +4,26 @@
 
 <!-- Cart Start -->
 <section class="cart_section">
-	@if(Session::has('success'))
-	<div class="alert alert-success fade show" role="alert">
-		{!! session('success') !!}
-		<button type="button" class="close pl-2" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		</button>
-	</div>
-	@endif
+
 	<div class="py-5">
+
 		<div class="container py-lg-5">
+			@if(Session::has('success'))
+			<div class="alert alert-success fade show" role="alert">
+				{!! session('success') !!}
+				<button type="button" class="close pl-2" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			@endif
+			@if(Session::has('failed'))
+			<div class="alert alert-danger fade show" role="alert">
+				{!! session('failed') !!}
+				<button type="button" class="close pl-2" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			@endif
 			<div class="row mt-5">
 				<div class="col-lg-9">
 					<div class="card products-card p-4">
@@ -110,11 +120,11 @@
 <!-- Cart End -->
 
 <!-- Shopping Section Start -->
-<section class="w3l-ecommerce-main">
-	<!-- /products-->
+<!-- <section class="w3l-ecommerce-main">
+
 	<div class="ecom-contenthny">
 		<div class="container py-lg-5">
-			<!-- /row-->
+	
 			<div class="ecom-products-grids row mt-lg-5 mt-3">
 				<div class="col-lg-3 col-6 product-incfhny mt-4">
 					<div class="product-grid2 transmitv">
@@ -244,10 +254,10 @@
 
 				</div>
 			</div>
-			<!-- //row-->
+
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- Shopping Section End -->
 
 <!-- Features Section Start -->

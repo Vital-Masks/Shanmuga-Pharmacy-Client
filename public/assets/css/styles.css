@@ -1,5 +1,18 @@
 .w3l-banner-slider-main header.tophny-header {
-    background-color: #008700 !important;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(rgba(0, 0, 0, 0.6)),
+        color-stop(rgba(0, 0, 0, 0.3)),
+        to(transparent)
+    ) !important;
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3),
+        transparent
+    ) !important;
 }
 
 .btn-primary {
@@ -44,6 +57,24 @@
     border-radius: 10px;
 }
 
+.side_filter__section .filter__section_1 .filter-bar-search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.side_filter__section .filter__section_1 .filter-bar-search button {
+    border: 0;
+    background-color: rgb(84, 93, 103);
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
 .side_filter__section .filter__section_2 {
     background-color: #f8f8f8;
     height: 300px;
@@ -65,16 +96,10 @@
     justify-content: space-between;
 }
 
-.single_product_section .single_product_img {
-    width: 500px;
-    height: 500px;
-}
-
 .single_product_section .single_product_img img {
     width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
+    -o-object-fit: contain;
+    object-fit: contain;
 }
 
 .authentication {
@@ -122,5 +147,36 @@
     border-radius: 50% !important;
     -o-object-fit: cover;
     object-fit: cover;
+}
+
+.catelog-medicine .brand-title {
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 15px;
+}
+
+.catelog-medicine .catelog-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+}
+
+.catelog-medicine .catelog-content img {
+    width: 200px;
+    height: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.catelog-medicine .catelog-content .details {
+    padding: 10px;
+}
+
+.catelog-medicine .catelog-content .details p {
+    margin: 2px 0;
 }
 /*# sourceMappingURL=styles.css.map */
