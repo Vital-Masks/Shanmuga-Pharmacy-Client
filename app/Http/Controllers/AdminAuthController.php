@@ -25,7 +25,7 @@ class AdminAuthController extends Controller
     {
         // echo "<pre>"; print_r($request->all()); die;
         $request->validate([
-            'email' => 'required',
+            'email' => 'required|email|max:255|regex:/(.*)@gmail\.com/i',
             'password' => 'required',
         ]);
 

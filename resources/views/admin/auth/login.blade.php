@@ -56,6 +56,15 @@
                                 </button>
                             </div>
                             @endif
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
                         </div>
                         <div class="login-form">
                             <form action="{{ route('login.custom')}}" method="post">
@@ -79,12 +88,12 @@
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
 
                             </form>
-                            <div class="register-link">
+                            <!-- <div class="register-link">
                                 <p>
                                     Don't you have account?
                                     <a href="{{route('register-user')}}">Sign Up Here</a>
                                 </p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -115,6 +124,7 @@
 
 <!-- Main JS-->
 <script src="{{ URL::asset('admin/assets/js/main.js')}}"></script>
+
 
 </body>
 
